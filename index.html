@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba mi Aplicación Ganaderos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a.button:hover {
+            background-color: #45a049;
+        }
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+            margin-top: 20px;
+            display: none;
+        }
+        .iframe-container {
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Prueba mi Aplicación Ganaderos</h1>
+    <p>Selecciona cómo te gustaría probar la aplicación:</p>
+
+
+    <div class="button-container">
+        <a href="#" class="button" onclick="loadApp('desktop')">Versión Escritorio</a>
+        <a href="#" class="button" onclick="loadApp('mobile')">Versión Móvil</a>
+    </div>
+
+
+    <!-- Contenedor para el iframe -->
+    <div class="iframe-container">
+        <iframe id="appFrame"></iframe>
+    </div>
+
+    <script>
+        function loadApp(version) {
+            var iframe = document.getElementById('appFrame');
+            iframe.style.display = 'block';
+
+            // Enlaces de la versión móvil y escritorio de la aplicación
+            if (version === 'desktop') {
+                iframe.src = 'https://www.appsheet.com/start/3bbe70e3-37a0-4af9-b01d-daa38290185f';
+            } else if (version === 'mobile') {
+                iframe.src = 'https://www.appsheet.com/template/mobilepreview?appId=3bbe70e3-37a0-4af9-b01d-daa38290185f';
+            }
+        }
+    </script>
+
+</body>
+</html>
